@@ -23,6 +23,7 @@ a:active {
 	color: lightsalmon;
 }
 
+/* Footer */
 #footer {
 	position: fixed;
 	left: 0;
@@ -37,6 +38,22 @@ a:active {
 		0 0 1px darkblue,
 		0 0 1px darkblue;
 }
+#sound-toggle {
+	width: 0;
+}
+	#sound-toggle,
+	#sound-toggle + label,
+	#sound-toggle + label::before {
+		cursor: pointer;
+	}
+	#sound-toggle + label::before {
+		display: inline-block;
+		transform: scale(1.25);
+		content: '\1f507';
+	}
+		#sound-toggle:checked + label::before {
+			content: '\1f50a';
+		}
 
 /* Main elements */
 #face-container,
@@ -51,22 +68,22 @@ a:active {
 	justify-content: center;
 	align-items: center;
 }
-#face-container img {
-	max-height: 95%;
-	
-	transform: rotateZ(0deg);
-	opacity: 1;
-}
-#text-container p {
-	font-size: 200px;
-	font-size: 20vh;
-	font-weight: bold;
-	line-height: 0.9;
-	text-transform: uppercase;
-	
-	transform: rotateZ(360deg);
-	opacity: 0;
-}
+	#face-container img {
+		max-height: 95%;
+		
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
+	#text-container p {
+		font-size: 200px;
+		font-size: 20vh;
+		font-weight: bold;
+		line-height: 0.9;
+		text-transform: uppercase;
+		
+		transform: rotateZ(360deg);
+		opacity: 0;
+	}
 
 /* Animation */
 #face-container img,
@@ -79,14 +96,14 @@ a:active {
 		cubic-bezier(0.7, 0.1, 0.3, 1.0), /* transform */
 		cubic-bezier(0.7, 0.0, 0.2, 1.0); /* opacity */
 }
-.anim #face-container img {
-	transform: rotateZ(-360deg);
-	opacity: 0;
-}
-.anim #text-container p {
-	transform: rotateZ(0deg);
-	opacity: 1;
-}
+	.anim #face-container img {
+		transform: rotateZ(-360deg);
+		opacity: 0;
+	}
+	.anim #text-container p {
+		transform: rotateZ(0deg);
+		opacity: 1;
+	}
 
 /* Make the visible thing clickable. */
 #face-container { pointer-events: auto; }
