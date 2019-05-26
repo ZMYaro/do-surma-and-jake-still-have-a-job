@@ -18,6 +18,7 @@ body {
 
 a {
 	color: lightskyblue;
+	outline-color: white; /* For focus ring */
 }
 a:active {
 	color: lightsalmon;
@@ -51,6 +52,13 @@ a:active {
 		transform: scale(1.25);
 		content: '\1f507';
 	}
+		#sound-toggle:focus + label::before {
+			text-shadow:
+				0 0 2px white,
+				0 0 2px white,
+				0 0 2px white,
+				0 0 2px white;
+		}
 		#sound-toggle:checked + label::before {
 			content: '\1f50a';
 		}
