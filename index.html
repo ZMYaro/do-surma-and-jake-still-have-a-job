@@ -6,6 +6,11 @@
 			var jungleAudio,
 				animTimeout;
 			
+			// Add service worker.
+			if (navigator.serviceWorker) {
+				navigator.serviceWorker.register('service_worker.js');
+			}
+			
 			function toggleAnim() {
 				if (window.animTimeout) {
 					clearTimeout(animTimeout);
