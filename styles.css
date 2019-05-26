@@ -1,0 +1,95 @@
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	color: white;
+	font-family: 'Roboto Mono', monospace;
+	text-align: center;
+	
+	background: radial-gradient(#0155ff 60%, #022fee 75%);
+	background: radial-gradient(circle at 50%, #0155ff 60%, #022fee 80%);
+	background-attachment: fixed;
+}
+
+a {
+	color: lightskyblue;
+}
+a:active {
+	color: lightsalmon;
+}
+
+#footer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 4px;
+	font-size: 75%;
+	
+	text-shadow:
+		0 0 1px darkblue,
+		0 0 1px darkblue,
+		0 0 1px darkblue,
+		0 0 1px darkblue;
+}
+
+/* Main elements */
+#face-container,
+#text-container {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#face-container img {
+	max-height: 95%;
+	
+	transform: rotateZ(0deg);
+	opacity: 1;
+}
+#text-container p {
+	font-size: 200px;
+	font-size: 20vh;
+	font-weight: bold;
+	line-height: 0.9;
+	text-transform: uppercase;
+	
+	transform: rotateZ(360deg);
+	opacity: 0;
+}
+
+/* Animation */
+#face-container img,
+#text-container p {
+	cursor: pointer;
+	
+	transition-property: transform, opacity;
+	transition-duration: 1.5s;
+	transition-timing-function:
+		cubic-bezier(0.7, 0.1, 0.3, 1.0), /* transform */
+		cubic-bezier(0.7, 0.0, 0.2, 1.0); /* opacity */
+}
+.anim #face-container img {
+	transform: rotateZ(-360deg);
+	opacity: 0;
+}
+.anim #text-container p {
+	transform: rotateZ(0deg);
+	opacity: 1;
+}
+
+/* Make the visible thing clickable. */
+#face-container { pointer-events: auto; }
+#text-container { pointer-events: none; }
+.anim #face-container { pointer-events: none; }
+.anim #text-container { pointer-events: auto; }
