@@ -34,6 +34,7 @@ a:active {
 	bottom: 0;
 	padding: 4px;
 	font-size: 75%;
+	text-wrap: balance;
 	
 	text-shadow:
 		0 0 1px darkblue,
